@@ -15,26 +15,26 @@ public class BuyShoes extends BaseClass {
 		bsp = new BuyShoesPage(driver);
 		cm = new CommonMethods(driver);
 		bsp.clickToAllMenu();
-		Thread.sleep(2000);
+		
 		bsp.ClickOnMensWearMenu();
-		Thread.sleep(2000);
+		
 		bsp.clickOnSportshoeMenu();
-		Thread.sleep(2000);
+		
 		bsp.clickOnRunning();
-		Thread.sleep(2000);
+		
 		bsp.selectShoe();
-		Thread.sleep(2000);
+		
 		String ParentWindow = driver.getWindowHandle();
 		cm.switchToNewWindow(ParentWindow);
-		Thread.sleep(2000);
+		
 		bsp.SelectSize();
-		Thread.sleep(2000);
+		
 		bsp.selectShoeColor();
-		Thread.sleep(2000);
+		
 		bsp.clickAddTocart();
-		Thread.sleep(2000);
+		
 		bsp.clickProceedToPay();
-		Thread.sleep(2000);
+		
 
 	}
 

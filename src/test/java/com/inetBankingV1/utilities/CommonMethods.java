@@ -3,9 +3,16 @@ package com.inetBankingV1.utilities;
 import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
+import java.time.Duration;
 import java.util.Iterator;
 import java.util.Set;
+
+
+
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.inetBankingV1.pageObjects.BuyBookPage;
 
@@ -38,6 +45,12 @@ public class CommonMethods {
 
 			}
 		}
+	}
+	
+	public void waitForElementLoaded(WebElement element) {
+		// explicit wait - to wait for the compose button to be click-able
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.visibilityOf(element));
 	}
 
 }

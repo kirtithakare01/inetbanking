@@ -6,12 +6,16 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
+import com.inetBankingV1.utilities.CommonMethods;
+
 public class BuyShoesPage {
 	WebDriver driver;
+	CommonMethods cm;
 
 	public BuyShoesPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 		this.driver = driver;
+		cm = new CommonMethods(driver);
 	}
 
 	@FindBy(id = "nav-hamburger-menu")
@@ -34,24 +38,29 @@ public class BuyShoesPage {
 	WebElement Proceed;
 
 	public void clickToAllMenu() {
+		cm.waitForElementLoaded(All);
 		All.click();
 	}
 
 	public void ClickOnMensWearMenu() {
+		cm.waitForElementLoaded(Mensfashion);
 		Mensfashion.click();
 
 	}
 
 	public void clickOnSportshoeMenu() {
+		cm.waitForElementLoaded(Sportshoes);
 		Sportshoes.click();
 	}
 
 	public void clickOnRunning() {
+		cm.waitForElementLoaded(running);
 		running.click();
 
 	}
 
 	public void selectShoe() {
+		cm.waitForElementLoaded(shoeSelect);
 		shoeSelect.click();
 
 	}
@@ -63,15 +72,18 @@ public class BuyShoesPage {
 	}
 
 	public void selectShoeColor() {
+		cm.waitForElementLoaded(ShoeColour);
 		ShoeColour.click();
 
 	}
 
 	public void clickAddTocart() {
+		cm.waitForElementLoaded(addToCart);
 		addToCart.click();
 	}
 
 	public void clickProceedToPay() {
+		cm.waitForElementLoaded(Proceed);
 		Proceed.click();
 	}
 
